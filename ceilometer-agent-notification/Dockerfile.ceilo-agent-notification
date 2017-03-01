@@ -1,0 +1,10 @@
+# Dockerfile.ceilo-agent-notification: docker file for building srikanthvavila/ceilometer-agent-notification container
+# It is built on top of srikanthvavila/ceilometer-base container
+
+FROM srikanthvavila/ceilometer-base
+
+ADD start-ceilo-agent-notification.sh /usr/bin/start-ceilo-agent-notification.sh
+RUN chmod +x /usr/bin/start-ceilo-agent-notification.sh
+#ADD ceilo-agent-notification.conf /etc/supervisor/conf.d/
+
+CMD ["/usr/bin/start-ceilo-agent-notification.sh"]
